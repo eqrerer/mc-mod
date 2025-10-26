@@ -18,7 +18,9 @@
 		"main": [
 			"github.eqrerer.BloxtedStalker"
 		],
-		"client": [ "github.eqrerer.TrackerClient" ]
+		"client": [
+			"github.eqrerer.BloxtedStalkerClient"
+        ]
 	},
 	"mixins": [
 		"bloxtedstalker.mixins.json",
