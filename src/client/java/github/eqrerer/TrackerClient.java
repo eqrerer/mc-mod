@@ -64,11 +64,11 @@ public class TrackerClient implements ClientModInitializer {
                 e.payload = Map.of("note", "player joined");
 
                 // primary write - should compile and run if Storage and Event are in src/main/java/github/eqrerer/storage
-                try {
+                try{
                     Storage.writeEvent(e);
                 } catch (Throwable t) {
                     // fallback: write raw map if signature mismatch happens at runtime/compile-time
-                    LOGGER.warn("[Bloxted Stalker] writeEvent failed, falling back to writeRaw: {}", t.toString());
+                    LOGGER.warn("[Bloxted Stalker] writeEvent failed falling back to  writeRaw: {}", t.toString());
                     Map<String, Object> raw = new HashMap<>();
                     raw.put("eventType", e.eventType);
                     raw.put("timestamp", e.timestamp);
